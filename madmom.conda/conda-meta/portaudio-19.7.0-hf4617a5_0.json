@@ -1,0 +1,120 @@
+{
+  "build": "hf4617a5_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "constrains": [],
+  "depends": [
+    "__glibc >=2.17,<3.0.a0",
+    "libgcc >=13",
+    "libstdcxx >=13",
+    "alsa-lib >=1.2.12,<1.3.0a0"
+  ],
+  "extracted_package_dir": "/home/hkatzdev/miniforge3/pkgs/portaudio-19.7.0-hf4617a5_0",
+  "files": [
+    "include/pa_linux_alsa.h",
+    "include/portaudio.h",
+    "lib/cmake/portaudio/portaudioConfig.cmake",
+    "lib/cmake/portaudio/portaudioConfigVersion.cmake",
+    "lib/cmake/portaudio/portaudioTargets-release.cmake",
+    "lib/cmake/portaudio/portaudioTargets.cmake",
+    "lib/libportaudio.so",
+    "lib/pkgconfig/portaudio-2.0.pc",
+    "share/doc/portaudio/LICENSE.txt",
+    "share/doc/portaudio/README.md"
+  ],
+  "fn": "portaudio-19.7.0-hf4617a5_0.conda",
+  "license": "MIT",
+  "link": {
+    "source": "/home/hkatzdev/miniforge3/pkgs/portaudio-19.7.0-hf4617a5_0",
+    "type": 1
+  },
+  "md5": "053455c094c711e9aa77cf5023cf2bc3",
+  "name": "portaudio",
+  "package_tarball_full_path": "/home/hkatzdev/miniforge3/pkgs/portaudio-19.7.0-hf4617a5_0.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "include/pa_linux_alsa.h",
+        "path_type": "hardlink",
+        "sha256": "99a260d46c31f16cf2638d755de5f8b6ec3161a20bfd00c65d21a69890cee8c8",
+        "sha256_in_prefix": "99a260d46c31f16cf2638d755de5f8b6ec3161a20bfd00c65d21a69890cee8c8",
+        "size_in_bytes": 3811
+      },
+      {
+        "_path": "include/portaudio.h",
+        "path_type": "hardlink",
+        "sha256": "0e2d81de9cd89fb93bfd7f5dc1807627884cc7fe8a5483107328215e7bd447e5",
+        "sha256_in_prefix": "0e2d81de9cd89fb93bfd7f5dc1807627884cc7fe8a5483107328215e7bd447e5",
+        "size_in_bytes": 47766
+      },
+      {
+        "_path": "lib/cmake/portaudio/portaudioConfig.cmake",
+        "path_type": "hardlink",
+        "sha256": "f6f8983f0e81f300cfba351e57b52df2ea21101f700d0b5fb2810b7f779dcb58",
+        "sha256_in_prefix": "f6f8983f0e81f300cfba351e57b52df2ea21101f700d0b5fb2810b7f779dcb58",
+        "size_in_bytes": 60
+      },
+      {
+        "_path": "lib/cmake/portaudio/portaudioConfigVersion.cmake",
+        "path_type": "hardlink",
+        "sha256": "492b186d6fe746d636f84490dbaa0679f2b39131dcd2e2b7723068bb5efd4cc1",
+        "sha256_in_prefix": "492b186d6fe746d636f84490dbaa0679f2b39131dcd2e2b7723068bb5efd4cc1",
+        "size_in_bytes": 2753
+      },
+      {
+        "_path": "lib/cmake/portaudio/portaudioTargets-release.cmake",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/home/conda/feedstock_root/build_artifacts/portaudio_1730363929490/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p",
+        "sha256": "62ee84bea57e4b4f16db6aded82c13ab956b0b1deef4cfd23f2b70afd1a5f169",
+        "sha256_in_prefix": "8d7ed327925e6f0c636118ba06c86e9deb2efc4de8df3e537c38d3166566cd44",
+        "size_in_bytes": 1149
+      },
+      {
+        "_path": "lib/cmake/portaudio/portaudioTargets.cmake",
+        "path_type": "hardlink",
+        "sha256": "59b2e694c4b36c3c625f15f1a94b9277a05a9bd44a6a1123aee6f2f91c24ca87",
+        "sha256_in_prefix": "59b2e694c4b36c3c625f15f1a94b9277a05a9bd44a6a1123aee6f2f91c24ca87",
+        "size_in_bytes": 4099
+      },
+      {
+        "_path": "lib/libportaudio.so",
+        "path_type": "hardlink",
+        "sha256": "1257dcd94f1a98a5e8efa3704c594ec340c05fd693d5baa5066d15385e23eda1",
+        "sha256_in_prefix": "1257dcd94f1a98a5e8efa3704c594ec340c05fd693d5baa5066d15385e23eda1",
+        "size_in_bytes": 189992
+      },
+      {
+        "_path": "lib/pkgconfig/portaudio-2.0.pc",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/home/conda/feedstock_root/build_artifacts/portaudio_1730363929490/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p",
+        "sha256": "1aea655116a32201efccd21ab7df47fef2e56bb9bc95527244c790bf0f9d77f6",
+        "sha256_in_prefix": "4c6cbe562608f8be539f210b58bed478bb14d43be73ae31623f271f1be9d7947",
+        "size_in_bytes": 486
+      },
+      {
+        "_path": "share/doc/portaudio/LICENSE.txt",
+        "path_type": "hardlink",
+        "sha256": "ec52a1952d701f94e5135719a47376da4ee0b4a0201f1cafb49f61db6480ac3d",
+        "sha256_in_prefix": "ec52a1952d701f94e5135719a47376da4ee0b4a0201f1cafb49f61db6480ac3d",
+        "size_in_bytes": 3524
+      },
+      {
+        "_path": "share/doc/portaudio/README.md",
+        "path_type": "hardlink",
+        "sha256": "6c7646a721fef968b57bfd0997202b325731df918e0662d202c9661bdb95f4ee",
+        "sha256_in_prefix": "6c7646a721fef968b57bfd0997202b325731df918e0662d202c9661bdb95f4ee",
+        "size_in_bytes": 2894
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "3259d2bf63d0c889c516511c8fa73214791ca30baeeee0962eee8b97d17cd1c6",
+  "size": 77342,
+  "subdir": "linux-64",
+  "timestamp": 1730364040000,
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/portaudio-19.7.0-hf4617a5_0.conda",
+  "version": "19.7.0"
+}

@@ -1,0 +1,127 @@
+{
+  "build": "py313he16d9e2_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "constrains": [],
+  "depends": [
+    "setuptools",
+    "__glibc >=2.17,<3.0.a0",
+    "libgcc >=13",
+    "python_abi 3.13.* *_cp313",
+    "python >=3.13,<3.14.0a0",
+    "jack >=1.9.22,<1.10.0a0",
+    "portaudio >=19.7.0,<19.8.0a0"
+  ],
+  "extracted_package_dir": "/home/hkatzdev/miniforge3/pkgs/pyaudio-0.2.14-py313he16d9e2_2",
+  "files": [
+    "lib/python3.13/site-packages/PyAudio-0.2.14.dist-info/INSTALLER",
+    "lib/python3.13/site-packages/PyAudio-0.2.14.dist-info/LICENSE.txt",
+    "lib/python3.13/site-packages/PyAudio-0.2.14.dist-info/METADATA",
+    "lib/python3.13/site-packages/PyAudio-0.2.14.dist-info/RECORD",
+    "lib/python3.13/site-packages/PyAudio-0.2.14.dist-info/REQUESTED",
+    "lib/python3.13/site-packages/PyAudio-0.2.14.dist-info/WHEEL",
+    "lib/python3.13/site-packages/PyAudio-0.2.14.dist-info/direct_url.json",
+    "lib/python3.13/site-packages/PyAudio-0.2.14.dist-info/top_level.txt",
+    "lib/python3.13/site-packages/pyaudio/__init__.py",
+    "lib/python3.13/site-packages/pyaudio/__pycache__/__init__.cpython-313.pyc",
+    "lib/python3.13/site-packages/pyaudio/_portaudio.cpython-313-x86_64-linux-gnu.so"
+  ],
+  "fn": "pyaudio-0.2.14-py313he16d9e2_2.conda",
+  "license": "MIT",
+  "link": {
+    "source": "/home/hkatzdev/miniforge3/pkgs/pyaudio-0.2.14-py313he16d9e2_2",
+    "type": 1
+  },
+  "md5": "6e19b3436a4714984e58fca577c061ed",
+  "name": "pyaudio",
+  "package_tarball_full_path": "/home/hkatzdev/miniforge3/pkgs/pyaudio-0.2.14-py313he16d9e2_2.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/python3.13/site-packages/PyAudio-0.2.14.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5
+      },
+      {
+        "_path": "lib/python3.13/site-packages/PyAudio-0.2.14.dist-info/LICENSE.txt",
+        "path_type": "hardlink",
+        "sha256": "7e7b5596b31bfa1ccf0f636e8344e67a686265e091c0dd360f11b66dc82abc54",
+        "sha256_in_prefix": "7e7b5596b31bfa1ccf0f636e8344e67a686265e091c0dd360f11b66dc82abc54",
+        "size_in_bytes": 1055
+      },
+      {
+        "_path": "lib/python3.13/site-packages/PyAudio-0.2.14.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "29a57313d23d8ed1b0c0758b27909c4ccf598adaa1970e2f009ecec6ea801e1e",
+        "sha256_in_prefix": "29a57313d23d8ed1b0c0758b27909c4ccf598adaa1970e2f009ecec6ea801e1e",
+        "size_in_bytes": 2611
+      },
+      {
+        "_path": "lib/python3.13/site-packages/PyAudio-0.2.14.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "f1f9604a31ffb5ed418cbb6b574113ef57273f06b9b1b530dfa43bb813187ec5",
+        "sha256_in_prefix": "f1f9604a31ffb5ed418cbb6b574113ef57273f06b9b1b530dfa43bb813187ec5",
+        "size_in_bytes": 910
+      },
+      {
+        "_path": "lib/python3.13/site-packages/PyAudio-0.2.14.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "lib/python3.13/site-packages/PyAudio-0.2.14.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "4453fd990f1f1eba751d540cc02e924fa3da1729a7414e9c674d14390227c9fd",
+        "sha256_in_prefix": "4453fd990f1f1eba751d540cc02e924fa3da1729a7414e9c674d14390227c9fd",
+        "size_in_bytes": 104
+      },
+      {
+        "_path": "lib/python3.13/site-packages/PyAudio-0.2.14.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "a76ea3e12691a66783c3fc28236dc6ac0404f9b800b439b8bd9325afeb4751b5",
+        "sha256_in_prefix": "a76ea3e12691a66783c3fc28236dc6ac0404f9b800b439b8bd9325afeb4751b5",
+        "size_in_bytes": 103
+      },
+      {
+        "_path": "lib/python3.13/site-packages/PyAudio-0.2.14.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "8e9f1b826599878df99459be0ec59cd340f4938c63e220049967752ff4e92a4f",
+        "sha256_in_prefix": "8e9f1b826599878df99459be0ec59cd340f4938c63e220049967752ff4e92a4f",
+        "size_in_bytes": 8
+      },
+      {
+        "_path": "lib/python3.13/site-packages/pyaudio/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "ed5e998cd26b6b9c2329c22892599253ce1498532b166db70d3d5db56b715c65",
+        "sha256_in_prefix": "ed5e998cd26b6b9c2329c22892599253ce1498532b166db70d3d5db56b715c65",
+        "size_in_bytes": 36914
+      },
+      {
+        "_path": "lib/python3.13/site-packages/pyaudio/__pycache__/__init__.cpython-313.pyc",
+        "path_type": "hardlink",
+        "sha256": "c4ebbfa6f1b034b8a89287e891f47f7f34e04457db4db0c0389df9addb07a9ac",
+        "sha256_in_prefix": "c4ebbfa6f1b034b8a89287e891f47f7f34e04457db4db0c0389df9addb07a9ac",
+        "size_in_bytes": 35993
+      },
+      {
+        "_path": "lib/python3.13/site-packages/pyaudio/_portaudio.cpython-313-x86_64-linux-gnu.so",
+        "path_type": "hardlink",
+        "sha256": "7ace9a0a3b291e55d71b35c6908e16955ce25ba805cacb52c2028d3c7b789ded",
+        "sha256_in_prefix": "7ace9a0a3b291e55d71b35c6908e16955ce25ba805cacb52c2028d3c7b789ded",
+        "size_in_bytes": 53496
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "pyaudio",
+  "sha256": "c010e122395e415d8be967614d2f1d9d8d009fc32836edb005d35cae514ac274",
+  "size": 38711,
+  "subdir": "linux-64",
+  "timestamp": 1730446310000,
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/pyaudio-0.2.14-py313he16d9e2_2.conda",
+  "version": "0.2.14"
+}

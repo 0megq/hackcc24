@@ -1,0 +1,319 @@
+{
+  "build": "h7c63dc7_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "constrains": [],
+  "depends": [
+    "libgcc-ng >=12",
+    "libstdcxx-ng >=12",
+    "libopus >=1.3.1,<2.0a0",
+    "alsa-lib >=1.2.10,<1.3.0.0a0",
+    "libdb >=6.2.32,<6.3.0a0"
+  ],
+  "extracted_package_dir": "/home/hkatzdev/miniforge3/pkgs/jack-1.9.22-h7c63dc7_2",
+  "files": [
+    "bin/jackd",
+    "include/jack/control.h",
+    "include/jack/intclient.h",
+    "include/jack/jack.h",
+    "include/jack/jslist.h",
+    "include/jack/metadata.h",
+    "include/jack/midiport.h",
+    "include/jack/net.h",
+    "include/jack/ringbuffer.h",
+    "include/jack/session.h",
+    "include/jack/statistics.h",
+    "include/jack/systemdeps.h",
+    "include/jack/thread.h",
+    "include/jack/transport.h",
+    "include/jack/types.h",
+    "include/jack/uuid.h",
+    "include/jack/weakjack.h",
+    "include/jack/weakmacros.h",
+    "lib/jack/jack_alsa.so",
+    "lib/jack/jack_alsarawmidi.so",
+    "lib/jack/jack_dummy.so",
+    "lib/jack/jack_loopback.so",
+    "lib/jack/jack_net.so",
+    "lib/jack/jack_netone.so",
+    "lib/jack/jack_proxy.so",
+    "lib/jack/netmanager.so",
+    "lib/jack/profiler.so",
+    "lib/libjack.so",
+    "lib/libjack.so.0",
+    "lib/libjack.so.0.1.0",
+    "lib/libjackserver.so",
+    "lib/libjackserver.so.0",
+    "lib/libjackserver.so.0.1.0",
+    "lib/pkgconfig/jack.pc",
+    "share/man/man1/jackd.1"
+  ],
+  "fn": "jack-1.9.22-h7c63dc7_2.conda",
+  "license": "LGPL-2.0-only",
+  "link": {
+    "source": "/home/hkatzdev/miniforge3/pkgs/jack-1.9.22-h7c63dc7_2",
+    "type": 1
+  },
+  "md5": "f56277b7f079f1b13cbf7fb9b4f194c4",
+  "name": "jack",
+  "package_tarball_full_path": "/home/hkatzdev/miniforge3/pkgs/jack-1.9.22-h7c63dc7_2.conda",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/jackd",
+        "path_type": "hardlink",
+        "sha256": "69bae7796f65f3cedea369dc96a74efb390aa996b57498da2b93eed83f4be92a",
+        "sha256_in_prefix": "69bae7796f65f3cedea369dc96a74efb390aa996b57498da2b93eed83f4be92a",
+        "size_in_bytes": 31576
+      },
+      {
+        "_path": "include/jack/control.h",
+        "path_type": "hardlink",
+        "sha256": "4e710b9b26dca59729adad679e362f0db7f07e1a154e10dcc7c20673ce72a5f3",
+        "sha256_in_prefix": "4e710b9b26dca59729adad679e362f0db7f07e1a154e10dcc7c20673ce72a5f3",
+        "size_in_bytes": 17473
+      },
+      {
+        "_path": "include/jack/intclient.h",
+        "path_type": "hardlink",
+        "sha256": "a691d3260b40df4fb9a10a4fa5b5ae5174f2b673f1cb94d7f638bd346654598d",
+        "sha256_in_prefix": "a691d3260b40df4fb9a10a4fa5b5ae5174f2b673f1cb94d7f638bd346654598d",
+        "size_in_bytes": 4828
+      },
+      {
+        "_path": "include/jack/jack.h",
+        "path_type": "hardlink",
+        "sha256": "836bac9fdbe5ca4c48bf6a2124de62bc467cd87ced96e5536c293dea2491aa1e",
+        "sha256_in_prefix": "836bac9fdbe5ca4c48bf6a2124de62bc467cd87ced96e5536c293dea2491aa1e",
+        "size_in_bytes": 56052
+      },
+      {
+        "_path": "include/jack/jslist.h",
+        "path_type": "hardlink",
+        "sha256": "e3344969fa0f5a72516c42606b1f8a8ae8220a676f0f5c9d4df9593fb238d631",
+        "sha256_in_prefix": "e3344969fa0f5a72516c42606b1f8a8ae8220a676f0f5c9d4df9593fb238d631",
+        "size_in_bytes": 5534
+      },
+      {
+        "_path": "include/jack/metadata.h",
+        "path_type": "hardlink",
+        "sha256": "f1d28264fcf02584565b5bab389f8991c761ea7b2d0b572320864edc5c8934c9",
+        "sha256_in_prefix": "f1d28264fcf02584565b5bab389f8991c761ea7b2d0b572320864edc5c8934c9",
+        "size_in_bytes": 11258
+      },
+      {
+        "_path": "include/jack/midiport.h",
+        "path_type": "hardlink",
+        "sha256": "b82206067630699876821b3f9a6b213644bad8a8764b4f1fedddd65d4a2d9f9c",
+        "sha256_in_prefix": "b82206067630699876821b3f9a6b213644bad8a8764b4f1fedddd65d4a2d9f9c",
+        "size_in_bytes": 6849
+      },
+      {
+        "_path": "include/jack/net.h",
+        "path_type": "hardlink",
+        "sha256": "ce5c5dc4b19a918f35bc04a56b0816c4f49faa00df5ca2d244f3d3c9102a1d61",
+        "sha256_in_prefix": "ce5c5dc4b19a918f35bc04a56b0816c4f49faa00df5ca2d244f3d3c9102a1d61",
+        "size_in_bytes": 15331
+      },
+      {
+        "_path": "include/jack/ringbuffer.h",
+        "path_type": "hardlink",
+        "sha256": "699569c677de5a67daec3a632030f65ea06aa0dc27c6eb8b7941f09b84b9001e",
+        "sha256_in_prefix": "699569c677de5a67daec3a632030f65ea06aa0dc27c6eb8b7941f09b84b9001e",
+        "size_in_bytes": 7952
+      },
+      {
+        "_path": "include/jack/session.h",
+        "path_type": "hardlink",
+        "sha256": "dab6258c573ac46f19206f71cd82d98e58c66b9ff254e9ad323280c69d6e2407",
+        "sha256_in_prefix": "dab6258c573ac46f19206f71cd82d98e58c66b9ff254e9ad323280c69d6e2407",
+        "size_in_bytes": 9697
+      },
+      {
+        "_path": "include/jack/statistics.h",
+        "path_type": "hardlink",
+        "sha256": "c29a6f943111bec263718c3a48687fdc1bae41aeaff0e01061b8ccd143ebadb9",
+        "sha256_in_prefix": "c29a6f943111bec263718c3a48687fdc1bae41aeaff0e01061b8ccd143ebadb9",
+        "size_in_bytes": 1836
+      },
+      {
+        "_path": "include/jack/systemdeps.h",
+        "path_type": "hardlink",
+        "sha256": "ea56f3cb5bd9ded9e1b91511eb796171d7647f77862557ccccb636afa9f4fcbe",
+        "sha256_in_prefix": "ea56f3cb5bd9ded9e1b91511eb796171d7647f77862557ccccb636afa9f4fcbe",
+        "size_in_bytes": 4999
+      },
+      {
+        "_path": "include/jack/thread.h",
+        "path_type": "hardlink",
+        "sha256": "80c639f9fc3e14be3227473236d80e7638150aed2e830c583b6efcd4b6210a1c",
+        "sha256_in_prefix": "80c639f9fc3e14be3227473236d80e7638150aed2e830c583b6efcd4b6210a1c",
+        "size_in_bytes": 5205
+      },
+      {
+        "_path": "include/jack/transport.h",
+        "path_type": "hardlink",
+        "sha256": "bb13d396f14120b880e8aa85db9ab0ef51a488f48dcbd158b9970ead3da53f49",
+        "sha256_in_prefix": "bb13d396f14120b880e8aa85db9ab0ef51a488f48dcbd158b9970ead3da53f49",
+        "size_in_bytes": 8645
+      },
+      {
+        "_path": "include/jack/types.h",
+        "path_type": "hardlink",
+        "sha256": "a55ab4b0d287de3113d0d96ebe67d596c706dee320bc1537e78e49e9be2f8956",
+        "sha256_in_prefix": "a55ab4b0d287de3113d0d96ebe67d596c706dee320bc1537e78e49e9be2f8956",
+        "size_in_bytes": 25058
+      },
+      {
+        "_path": "include/jack/uuid.h",
+        "path_type": "hardlink",
+        "sha256": "7425ca34744557f8da91289160dd978eb0f8a0f27221eecbd1ab65c7cab1c2b4",
+        "sha256_in_prefix": "7425ca34744557f8da91289160dd978eb0f8a0f27221eecbd1ab65c7cab1c2b4",
+        "size_in_bytes": 1645
+      },
+      {
+        "_path": "include/jack/weakjack.h",
+        "path_type": "hardlink",
+        "sha256": "d573d7e0779e787d9185d13ae0274163d2617e49e420f306b0a0578f47a914ca",
+        "sha256_in_prefix": "d573d7e0779e787d9185d13ae0274163d2617e49e420f306b0a0578f47a914ca",
+        "size_in_bytes": 5364
+      },
+      {
+        "_path": "include/jack/weakmacros.h",
+        "path_type": "hardlink",
+        "sha256": "496adc70aad32784cd3130571238ceedc88da9e4891f0fa7d0558ee0d8ba4cab",
+        "sha256_in_prefix": "496adc70aad32784cd3130571238ceedc88da9e4891f0fa7d0558ee0d8ba4cab",
+        "size_in_bytes": 2762
+      },
+      {
+        "_path": "lib/jack/jack_alsa.so",
+        "path_type": "hardlink",
+        "sha256": "1c945a8b69834b4cb08a2566b8d0211423cedddcd143b795dae8b38cbbdadcd1",
+        "sha256_in_prefix": "1c945a8b69834b4cb08a2566b8d0211423cedddcd143b795dae8b38cbbdadcd1",
+        "size_in_bytes": 150072
+      },
+      {
+        "_path": "lib/jack/jack_alsarawmidi.so",
+        "path_type": "hardlink",
+        "sha256": "3fd14727f0a8230ba61ab0e22bc6f19a2cc98152ccae590d5a2bf66127008a8f",
+        "sha256_in_prefix": "3fd14727f0a8230ba61ab0e22bc6f19a2cc98152ccae590d5a2bf66127008a8f",
+        "size_in_bytes": 78480
+      },
+      {
+        "_path": "lib/jack/jack_dummy.so",
+        "path_type": "hardlink",
+        "sha256": "7fa5d8aea9c3f0329ff46ece0568c0f8f15999c85848c0f5880c7ef722fed074",
+        "sha256_in_prefix": "7fa5d8aea9c3f0329ff46ece0568c0f8f15999c85848c0f5880c7ef722fed074",
+        "size_in_bytes": 28312
+      },
+      {
+        "_path": "lib/jack/jack_loopback.so",
+        "path_type": "hardlink",
+        "sha256": "275c28eb7d5929abb4d59a780b3a4cd547a38f9bcbe887e17efed69f70309be5",
+        "sha256_in_prefix": "275c28eb7d5929abb4d59a780b3a4cd547a38f9bcbe887e17efed69f70309be5",
+        "size_in_bytes": 24008
+      },
+      {
+        "_path": "lib/jack/jack_net.so",
+        "path_type": "hardlink",
+        "sha256": "17475655161f12643f28be088bc80337073053b7afe4fc281a5d78712d002e0f",
+        "sha256_in_prefix": "17475655161f12643f28be088bc80337073053b7afe4fc281a5d78712d002e0f",
+        "size_in_bytes": 60624
+      },
+      {
+        "_path": "lib/jack/jack_netone.so",
+        "path_type": "hardlink",
+        "sha256": "b94f33c6ea97c072d8166fe23eaa5310563f1a42a2147dd445cf9b67856fc66b",
+        "sha256_in_prefix": "b94f33c6ea97c072d8166fe23eaa5310563f1a42a2147dd445cf9b67856fc66b",
+        "size_in_bytes": 77928
+      },
+      {
+        "_path": "lib/jack/jack_proxy.so",
+        "path_type": "hardlink",
+        "sha256": "787850aa06dc70fa5ddbe8aa286000bb78b3898b2a33d25ed04c98bd27b35116",
+        "sha256_in_prefix": "787850aa06dc70fa5ddbe8aa286000bb78b3898b2a33d25ed04c98bd27b35116",
+        "size_in_bytes": 43744
+      },
+      {
+        "_path": "lib/jack/netmanager.so",
+        "path_type": "hardlink",
+        "sha256": "36095838ff3e99011c0b21275921ea8251e1ddba2597cb7165c0dad9273eb2cd",
+        "sha256_in_prefix": "36095838ff3e99011c0b21275921ea8251e1ddba2597cb7165c0dad9273eb2cd",
+        "size_in_bytes": 60208
+      },
+      {
+        "_path": "lib/jack/profiler.so",
+        "path_type": "hardlink",
+        "sha256": "a3720aee08301ea9c23d449a4bbae0eec73048ad6005e98cb20ec84218769812",
+        "sha256_in_prefix": "a3720aee08301ea9c23d449a4bbae0eec73048ad6005e98cb20ec84218769812",
+        "size_in_bytes": 22168
+      },
+      {
+        "_path": "lib/libjack.so",
+        "path_type": "softlink",
+        "sha256": "377d485b02a1548349a1115ca4acb5867e55950ebb11bdd56f240e44d9cd81e3",
+        "size_in_bytes": 353960
+      },
+      {
+        "_path": "lib/libjack.so.0",
+        "path_type": "softlink",
+        "sha256": "377d485b02a1548349a1115ca4acb5867e55950ebb11bdd56f240e44d9cd81e3",
+        "size_in_bytes": 353960
+      },
+      {
+        "_path": "lib/libjack.so.0.1.0",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/home/conda/feedstock_root/build_artifacts/jack_1693879739084/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeh",
+        "sha256": "377d485b02a1548349a1115ca4acb5867e55950ebb11bdd56f240e44d9cd81e3",
+        "sha256_in_prefix": "5c1f9af8c112bdc71b3541df33049cbad22afdecf4fa446ea1039aa1fb54c56d",
+        "size_in_bytes": 353960
+      },
+      {
+        "_path": "lib/libjackserver.so",
+        "path_type": "softlink",
+        "sha256": "229cc00fa0b6f5df287d40e49affee0b962671067372d09ae9ee4ce33fb93762",
+        "size_in_bytes": 804000
+      },
+      {
+        "_path": "lib/libjackserver.so.0",
+        "path_type": "softlink",
+        "sha256": "229cc00fa0b6f5df287d40e49affee0b962671067372d09ae9ee4ce33fb93762",
+        "size_in_bytes": 804000
+      },
+      {
+        "_path": "lib/libjackserver.so.0.1.0",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/home/conda/feedstock_root/build_artifacts/jack_1693879739084/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeh",
+        "sha256": "229cc00fa0b6f5df287d40e49affee0b962671067372d09ae9ee4ce33fb93762",
+        "sha256_in_prefix": "94e4b6cf8a1efcc19e94da9395c245429956a3ad3d089e78f63d0497f62ef164",
+        "size_in_bytes": 804000
+      },
+      {
+        "_path": "lib/pkgconfig/jack.pc",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/home/conda/feedstock_root/build_artifacts/jack_1693879739084/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeh",
+        "sha256": "1d3fee4cb6684cfc5b0f2e5ab79239adfcbc9f69ec5cc774794f8431cb29ba14",
+        "sha256_in_prefix": "21431fbfda81f63d75e89dd8c28a7f3995633941de7abdf0f0e7edb389a5fde3",
+        "size_in_bytes": 1561
+      },
+      {
+        "_path": "share/man/man1/jackd.1",
+        "path_type": "hardlink",
+        "sha256": "2d90087cf7d974a05246bf8d1b3e3bae505f35c23c998946d51723ffd0436611",
+        "sha256_in_prefix": "2d90087cf7d974a05246bf8d1b3e3bae505f35c23c998946d51723ffd0436611",
+        "size_in_bytes": 25324
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "5e44a3a4b9791d1268636811628555ad40d4a8dd5c3be3334062df75580ae25b",
+  "size": 464144,
+  "subdir": "linux-64",
+  "timestamp": 1693879949000,
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/jack-1.9.22-h7c63dc7_2.conda",
+  "version": "1.9.22"
+}
