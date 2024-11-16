@@ -1,0 +1,183 @@
+{
+  "build": "pyhd8ed1ab_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "constrains": [],
+  "depends": [
+    "importlib-resources",
+    "numba >=0.53",
+    "numpy >=1.17.0",
+    "python >=3.6"
+  ],
+  "extracted_package_dir": "/home/hkatzdev/miniforge3/pkgs/resampy-0.4.3-pyhd8ed1ab_0",
+  "files": [
+    "lib/python3.9/site-packages/resampy-0.4.3.dist-info/INSTALLER",
+    "lib/python3.9/site-packages/resampy-0.4.3.dist-info/LICENSE.md",
+    "lib/python3.9/site-packages/resampy-0.4.3.dist-info/METADATA",
+    "lib/python3.9/site-packages/resampy-0.4.3.dist-info/RECORD",
+    "lib/python3.9/site-packages/resampy-0.4.3.dist-info/REQUESTED",
+    "lib/python3.9/site-packages/resampy-0.4.3.dist-info/WHEEL",
+    "lib/python3.9/site-packages/resampy-0.4.3.dist-info/direct_url.json",
+    "lib/python3.9/site-packages/resampy-0.4.3.dist-info/top_level.txt",
+    "lib/python3.9/site-packages/resampy/__init__.py",
+    "lib/python3.9/site-packages/resampy/core.py",
+    "lib/python3.9/site-packages/resampy/data/kaiser_best.npz",
+    "lib/python3.9/site-packages/resampy/data/kaiser_fast.npz",
+    "lib/python3.9/site-packages/resampy/filters.py",
+    "lib/python3.9/site-packages/resampy/interpn.py",
+    "lib/python3.9/site-packages/resampy/version.py",
+    "lib/python3.9/site-packages/resampy/__pycache__/__init__.cpython-39.pyc",
+    "lib/python3.9/site-packages/resampy/__pycache__/core.cpython-39.pyc",
+    "lib/python3.9/site-packages/resampy/__pycache__/filters.cpython-39.pyc",
+    "lib/python3.9/site-packages/resampy/__pycache__/interpn.cpython-39.pyc",
+    "lib/python3.9/site-packages/resampy/__pycache__/version.cpython-39.pyc"
+  ],
+  "fn": "resampy-0.4.3-pyhd8ed1ab_0.conda",
+  "license": "ISC",
+  "link": {
+    "source": "/home/hkatzdev/miniforge3/pkgs/resampy-0.4.3-pyhd8ed1ab_0",
+    "type": 1
+  },
+  "md5": "a970791c13945d59aca2d2c0f0c1f97d",
+  "name": "resampy",
+  "noarch": "python",
+  "package_tarball_full_path": "/home/hkatzdev/miniforge3/pkgs/resampy-0.4.3-pyhd8ed1ab_0.conda",
+  "package_type": "noarch_python",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "site-packages/resampy-0.4.3.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5
+      },
+      {
+        "_path": "site-packages/resampy-0.4.3.dist-info/LICENSE.md",
+        "path_type": "hardlink",
+        "sha256": "9c21cf3da6675e5b28ba7bda19c7b1a8da9772a5244c59648435f412a6738886",
+        "sha256_in_prefix": "9c21cf3da6675e5b28ba7bda19c7b1a8da9772a5244c59648435f412a6738886",
+        "size_in_bytes": 743
+      },
+      {
+        "_path": "site-packages/resampy-0.4.3.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "ff3e4ce6f2d5b8151c1236fbb664b4171ce6f485602a7aa92e59d657b62e2f85",
+        "sha256_in_prefix": "ff3e4ce6f2d5b8151c1236fbb664b4171ce6f485602a7aa92e59d657b62e2f85",
+        "size_in_bytes": 2960
+      },
+      {
+        "_path": "site-packages/resampy-0.4.3.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "9428d48476f05c059c43629132d231cbcc98370f379cf62d2e4f2ffcc38b573d",
+        "sha256_in_prefix": "9428d48476f05c059c43629132d231cbcc98370f379cf62d2e4f2ffcc38b573d",
+        "size_in_bytes": 1449
+      },
+      {
+        "_path": "site-packages/resampy-0.4.3.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "site-packages/resampy-0.4.3.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "a2241587fe4f9d033413780f762cf4f5608d9b08870cc6867abfde96a0777283",
+        "sha256_in_prefix": "a2241587fe4f9d033413780f762cf4f5608d9b08870cc6867abfde96a0777283",
+        "size_in_bytes": 92
+      },
+      {
+        "_path": "site-packages/resampy-0.4.3.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "fab20847267a338a7e5db59b7ec1ff30cfc8d0a06e240778a4ed3120c6e6e643",
+        "sha256_in_prefix": "fab20847267a338a7e5db59b7ec1ff30cfc8d0a06e240778a4ed3120c6e6e643",
+        "size_in_bytes": 103
+      },
+      {
+        "_path": "site-packages/resampy-0.4.3.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "c586fc1e348f05e05ae9dade0df8b400bc38880f04b27205bf55d593f8116619",
+        "sha256_in_prefix": "c586fc1e348f05e05ae9dade0df8b400bc38880f04b27205bf55d593f8116619",
+        "size_in_bytes": 8
+      },
+      {
+        "_path": "site-packages/resampy/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "f65e7016ed411b1d8568ea983a268eed36862d15cd12e261583f451522f43774",
+        "sha256_in_prefix": "f65e7016ed411b1d8568ea983a268eed36862d15cd12e261583f451522f43774",
+        "size_in_bytes": 171
+      },
+      {
+        "_path": "site-packages/resampy/core.py",
+        "path_type": "hardlink",
+        "sha256": "37ee3601e0bca43e24c67ea840365001f464bee554b5480aa096e98aa147a479",
+        "sha256_in_prefix": "37ee3601e0bca43e24c67ea840365001f464bee554b5480aa096e98aa147a479",
+        "size_in_bytes": 9045
+      },
+      {
+        "_path": "site-packages/resampy/data/kaiser_best.npz",
+        "path_type": "hardlink",
+        "sha256": "344c4eb7d35ef9845192a506aaa5836ca243033a90e6363a9d25fc5cd12a5328",
+        "sha256_in_prefix": "344c4eb7d35ef9845192a506aaa5836ca243033a90e6363a9d25fc5cd12a5328",
+        "size_in_bytes": 3277596
+      },
+      {
+        "_path": "site-packages/resampy/data/kaiser_fast.npz",
+        "path_type": "hardlink",
+        "sha256": "8289150d2cd8f5cae2b60af483fcce0b9dd8a740c6294277f569317573e0a095",
+        "sha256_in_prefix": "8289150d2cd8f5cae2b60af483fcce0b9dd8a740c6294277f569317573e0a095",
+        "size_in_bytes": 99100
+      },
+      {
+        "_path": "site-packages/resampy/filters.py",
+        "path_type": "hardlink",
+        "sha256": "31871f3246bdd78adba1d087da4472869b2b6442ae969204f1a1c963a73090ae",
+        "sha256_in_prefix": "31871f3246bdd78adba1d087da4472869b2b6442ae969204f1a1c963a73090ae",
+        "size_in_bytes": 7248
+      },
+      {
+        "_path": "site-packages/resampy/interpn.py",
+        "path_type": "hardlink",
+        "sha256": "50ce892d76ca103fc072f252e50a84d6d78da38f513135fdaf9d712c2647e247",
+        "sha256_in_prefix": "50ce892d76ca103fc072f252e50a84d6d78da38f513135fdaf9d712c2647e247",
+        "size_in_bytes": 2368
+      },
+      {
+        "_path": "site-packages/resampy/version.py",
+        "path_type": "hardlink",
+        "sha256": "fe614a7caecc39917621a62b6c40422f7510d76e7bbaa6996ecb9baca6383dd2",
+        "sha256_in_prefix": "fe614a7caecc39917621a62b6c40422f7510d76e7bbaa6996ecb9baca6383dd2",
+        "size_in_bytes": 106
+      },
+      {
+        "_path": "lib/python3.9/site-packages/resampy/__pycache__/__init__.cpython-39.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.9/site-packages/resampy/__pycache__/core.cpython-39.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.9/site-packages/resampy/__pycache__/filters.cpython-39.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.9/site-packages/resampy/__pycache__/interpn.cpython-39.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.9/site-packages/resampy/__pycache__/version.cpython-39.pyc",
+        "path_type": "pyc_file"
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "resampy",
+  "sha256": "51a534628948815f447646f635fa5c81033800afb56749a00573c251c5d01625",
+  "size": 3078528,
+  "subdir": "noarch",
+  "timestamp": 1709733196000,
+  "url": "https://conda.anaconda.org/conda-forge/noarch/resampy-0.4.3-pyhd8ed1ab_0.conda",
+  "version": "0.4.3"
+}

@@ -1,0 +1,39 @@
+{
+  "build": "cuda112py39h9333c2f_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "constrains": [],
+  "depends": [
+    "python >=3.9,<3.10.0a0",
+    "python_abi 3.9.* *_cp39",
+    "libgcc-ng >=7.5.0",
+    "libstdcxx-ng >=7.5.0",
+    "__glibc >=2.17",
+    "cudatoolkit >=11.2,<12",
+    "openssl >=1.1.1l,<1.1.2a",
+    "tensorflow-base 2.6.2 cuda112py39he9472f8_1",
+    "tensorflow-estimator 2.6.2 cuda112py39h9333c2f_1"
+  ],
+  "extracted_package_dir": "/home/hkatzdev/miniforge3/pkgs/tensorflow-2.6.2-cuda112py39h9333c2f_1",
+  "files": [],
+  "fn": "tensorflow-2.6.2-cuda112py39h9333c2f_1.tar.bz2",
+  "license": "Apache-2.0",
+  "link": {
+    "source": "/home/hkatzdev/miniforge3/pkgs/tensorflow-2.6.2-cuda112py39h9333c2f_1",
+    "type": 1
+  },
+  "md5": "fde713fa01ca7aaf9e12cc0a05d0d9ca",
+  "name": "tensorflow",
+  "package_tarball_full_path": "/home/hkatzdev/miniforge3/pkgs/tensorflow-2.6.2-cuda112py39h9333c2f_1.tar.bz2",
+  "paths_data": {
+    "paths": [],
+    "paths_version": 1
+  },
+  "requested_spec": "tensorflow",
+  "sha256": "a1e26e208929d2fa9348a2657020ed90e0e36b353cfb70f3a0d95b87667a0232",
+  "size": 30158,
+  "subdir": "linux-64",
+  "timestamp": 1637959230000,
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/tensorflow-2.6.2-cuda112py39h9333c2f_1.tar.bz2",
+  "version": "2.6.2"
+}
