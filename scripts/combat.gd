@@ -167,7 +167,7 @@ func play_current_notes() -> bool:
 				#print("fail")
 				return false
 			else:
-				pass
+				$Bobber.play("crowd_bob")
 				#print("success")
 			#$AnimationPlayer.play_backwards("notes_to_guitar")
 		# Delete notes

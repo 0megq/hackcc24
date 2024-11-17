@@ -37,9 +37,9 @@ text = " Smoke  On  The  Water "
 [node name="2" type="Button" parent="."]
 custom_minimum_size = Vector2(256.865, 256)
 layout_mode = 0
-offset_left = -381.0
+offset_left = -363.0
 offset_top = -121.0
-offset_right = -124.135
+offset_right = -106.135
 offset_bottom = 135.0
 theme_override_fonts/font = ExtResource("2_4x1oq")
 theme_override_font_sizes/font_size = 50
@@ -48,9 +48,9 @@ text = " Iron  Man "
 [node name="3" type="Button" parent="."]
 custom_minimum_size = Vector2(256.865, 256)
 layout_mode = 0
-offset_left = 8.0
+offset_left = -28.0
 offset_top = -121.0
-offset_right = 378.0
+offset_right = 361.0
 offset_bottom = 135.0
 theme_override_fonts/font = ExtResource("2_4x1oq")
 theme_override_font_sizes/font_size = 50
@@ -59,9 +59,9 @@ text = " Come  As  You  Are "
 [node name="4" type="Button" parent="."]
 custom_minimum_size = Vector2(256.865, 256)
 layout_mode = 0
-offset_left = 449.0
+offset_left = 434.0
 offset_top = -121.0
-offset_right = 923.0
+offset_right = 920.0
 offset_bottom = 135.0
 theme_override_fonts/font = ExtResource("2_4x1oq")
 theme_override_font_sizes/font_size = 50
