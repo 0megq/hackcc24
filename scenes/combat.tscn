@@ -9,30 +9,21 @@
 [ext_resource type="Texture2D" uid="uid://eu35x2ddeq2x" path="res://assets/curtains.png" id="4_ykp1q"]
 [ext_resource type="Texture2D" uid="uid://b8ikxe60r8y2e" path="res://assets/spotlight.png" id="7_0tkmf"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k68on"]
-atlas = ExtResource("7_0tkmf")
-region = Rect2(44, -1, 191, 271)
-
-[sub_resource type="Animation" id="Animation_bawty"]
-resource_name = "notes"
-
-[sub_resource type="Animation" id="Animation_vhnbl"]
-resource_name = "guitar"
+[sub_resource type="Animation" id="Animation_x0maa"]
+resource_name = "off"
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Spotlight:rotation")
+tracks/0/path = NodePath("Spotlight:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.58476]
+"update": 1,
+"values": [Color(1, 1, 1, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_x0maa"]
-resource_name = "off"
 
 [sub_resource type="Animation" id="Animation_p5h6o"]
 length = 0.001
@@ -48,13 +39,99 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spotlight:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vhnbl"]
+resource_name = "notes_to_guitar"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spotlight:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.523599, 0.401426]
+}
+
+[sub_resource type="Animation" id="Animation_e4nj3"]
+resource_name = "on_notes"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spotlight:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.523599]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spotlight:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wfv1k"]
+resource_name = "on_guitar"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spotlight:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.401426]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spotlight:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pnwwx"]
 _data = {
 "RESET": SubResource("Animation_p5h6o"),
-"guitar": SubResource("Animation_vhnbl"),
-"notes": SubResource("Animation_bawty"),
-"off": SubResource("Animation_x0maa")
+"notes_to_guitar": SubResource("Animation_vhnbl"),
+"off": SubResource("Animation_x0maa"),
+"on_guitar": SubResource("Animation_wfv1k"),
+"on_notes": SubResource("Animation_e4nj3")
 }
 
 [node name="Combat" type="Node2D" node_paths=PackedStringArray("string_nodes")]
@@ -66,43 +143,49 @@ position = Vector2(960, 540)
 scale = Vector2(4, 4)
 texture = ExtResource("2_0rna8")
 
+[node name="Cutoff" type="Line2D" parent="."]
+position = Vector2(1058, 205)
+points = PackedVector2Array(0, 0, 0, 530)
+width = 44.0
+default_color = Color(0.370365, 0.370364, 0.370364, 1)
+
 [node name="Notes" type="Node2D" parent="."]
 
 [node name="ETop" type="Line2D" parent="Notes"]
-position = Vector2(1936, 223)
-points = PackedVector2Array(0, 0, -800, 0)
-width = 20.0
-default_color = Color(0.77084, 0.770839, 0.770839, 1)
+position = Vector2(1800, 220)
+points = PackedVector2Array(0, 0, -730, 0)
+width = 30.0
+default_color = Color(0.370365, 0.370364, 0.370364, 1)
 
 [node name="A" type="Line2D" parent="Notes"]
-position = Vector2(1934, 297)
-points = PackedVector2Array(0, 0, -800, 0)
+position = Vector2(1800, 320)
+points = PackedVector2Array(0, 0, -730, 0)
 width = 20.0
-default_color = Color(0.77084, 0.770839, 0.770839, 1)
+default_color = Color(0.370365, 0.370364, 0.370364, 1)
 
 [node name="D" type="Line2D" parent="Notes"]
-position = Vector2(1937, 386)
-points = PackedVector2Array(0, 0, -800, 0)
+position = Vector2(1800, 420)
+points = PackedVector2Array(0, 0, -730, 0)
 width = 20.0
-default_color = Color(0.77084, 0.770839, 0.770839, 1)
+default_color = Color(0.370365, 0.370364, 0.370364, 1)
 
 [node name="G" type="Line2D" parent="Notes"]
-position = Vector2(1937, 499)
-points = PackedVector2Array(0, 0, -800, 0)
+position = Vector2(1800, 520)
+points = PackedVector2Array(0, 0, -730, 0)
 width = 20.0
-default_color = Color(0.77084, 0.770839, 0.770839, 1)
+default_color = Color(0.370365, 0.370364, 0.370364, 1)
 
 [node name="B" type="Line2D" parent="Notes"]
-position = Vector2(1937, 620)
-points = PackedVector2Array(0, 0, -800, 0)
+position = Vector2(1800, 620)
+points = PackedVector2Array(0, 0, -730, 0)
 width = 20.0
-default_color = Color(0.77084, 0.770839, 0.770839, 1)
+default_color = Color(0.370365, 0.370364, 0.370364, 1)
 
 [node name="EBottom" type="Line2D" parent="Notes"]
-position = Vector2(1940, 723)
-points = PackedVector2Array(0, 0, -800, 0)
-width = 20.0
-default_color = Color(0.77084, 0.770839, 0.770839, 1)
+position = Vector2(1800, 720)
+points = PackedVector2Array(0, 0, -730, 0)
+width = 30.0
+default_color = Color(0.370365, 0.370364, 0.370364, 1)
 
 [node name="Guitar" type="Sprite2D" parent="."]
 position = Vector2(919, 468)
@@ -115,16 +198,12 @@ position = Vector2(-7.30973, 0.443012)
 scale = Vector2(0.886028, 0.886028)
 texture = ExtResource("4_0mh2k")
 
-[node name="Cutoff" type="Line2D" parent="."]
-position = Vector2(1053, 216)
-points = PackedVector2Array(0, 0, 0, 500)
-
 [node name="TimerBar" type="ProgressBar" parent="."]
 visible = false
-offset_left = 150.0
-offset_top = 149.0
-offset_right = 644.0
-offset_bottom = 219.0
+offset_left = 477.0
+offset_top = 143.0
+offset_right = 707.0
+offset_bottom = 213.0
 show_percentage = false
 script = ExtResource("3_y4r6w")
 
@@ -134,9 +213,13 @@ script = ExtResource("3_y4r6w")
 script = ExtResource("4_cvchw")
 
 [node name="Spotlight" type="Sprite2D" parent="."]
-position = Vector2(501, 449)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(785, -18)
 scale = Vector2(4, 4)
-texture = SubResource("AtlasTexture_k68on")
+texture = ExtResource("7_0tkmf")
+offset = Vector2(0, 130)
+region_enabled = true
+region_rect = Rect2(48, 0, 181, 266)
 
 [node name="Curtains" type="Sprite2D" parent="."]
 position = Vector2(960, 540)

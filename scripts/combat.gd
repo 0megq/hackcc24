@@ -1,8 +1,11 @@
 class_name CombatManager extends Node2D
 
+signal player_lost
+signal player_won
+
 const PLAYER_WAIT_TIME: float = 2.0
 const NOTE_SEPARATION: float = 192.0
-const TIME_BETWEEN_NOTES: float = 3.0
+const TIME_BETWEEN_NOTES: float = 1.0
 const NOTE_SCENE := preload("res://scenes/note.tscn")
 
 # First index will select a string then second index will select a fret on that string
@@ -20,7 +23,6 @@ var NOTE_FREQUENCYS: Array[PackedInt32Array] = [
 
 var active_input_handlers: Array[InputHandler] = []
 
-var players_turn: bool = false
 # Notes are stored in playing order. Used for spawning
 # Notes that are next up are in the 0th index.
 # The PackedInt32Array starts with the top e string and then goes down. -1 represents an empty note
@@ -74,6 +76,7 @@ func play_level(level: int) -> void:
 		3:
 			set_to_third()
 	
+	$AnimationPlayer.play("on_notes")
 	play_current_notes()
 	
 	
@@ -95,7 +98,7 @@ func play_current_notes() -> void:
 					var note_object := NOTE_SCENE.instantiate()
 					note_object.text = str(next_notes[i])
 					string_nodes[i].add_child(note_object)
-					note_object.global_position = string_nodes[i].global_position
+					note_object.global_position = string_nodes[i].global_position - Vector2(0, 36)
 			# remove notes from queue
 			notes_to_spawn.remove_at(0)
 		# Move notes
@@ -108,6 +111,8 @@ func play_current_notes() -> void:
 		
 		note_move_timer.call_deferred("start",TIME_BETWEEN_NOTES) 
 		await note_move_timer.timeout
+		
+		
 		
 		# Check if note to play exists
 		var note_to_play_exists: bool = false
@@ -122,6 +127,7 @@ func play_current_notes() -> void:
 					break
 			
 		if note_to_play_exists:
+			$AnimationPlayer.play("notes_to_guitar")
 			# Activat player_input
 			var handler: InputHandler = InputHandler.new()
 			handler.timer = Timer.new()
@@ -136,14 +142,16 @@ func play_current_notes() -> void:
 			
 			# Process player input
 			if success:
-				print("win!")
+				player_won.emit()
 			else:
-				print("fail")
+				player_lost.emit()
+			$AnimationPlayer.play_backwards("notes_to_guitar")
 		# Delete notes
 		for string in string_nodes:
 			for note in string.get_children():
 				if note.global_position.x <= cutoff.global_position.x:
 					note.queue_free()
+		
 		
 		
 # This function will call the api and wait for player_wait_time

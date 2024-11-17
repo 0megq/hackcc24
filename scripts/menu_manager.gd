@@ -12,9 +12,9 @@ signal retry_pressed
 
 enum {
 	MAIN,
-	NOTES,
 	SETTINGS,
 	PAUSE,
+	RESULTS,
 	NONE,
 }
 
@@ -22,9 +22,9 @@ var current_menu: int = NONE
 var previous_menu: int = NONE
 
 @onready var main_menu: Control = $MainMenu
-@onready var notes_menu: Control = $NotesMenu
 @onready var settings_menu: Control = $SettingsMenu
 @onready var pause_menu: Control = $PauseMenu
+@onready var results_menu: Control = $ResultsMenu
 
 
 func _ready() -> void:
@@ -43,12 +43,12 @@ func change_menu(new_menu: int) -> void:
 	match new_menu:
 		MAIN:
 			main_menu.show()
-		NOTES:
-			notes_menu.show()
 		SETTINGS:
 			settings_menu.show()
 		PAUSE:
 			pause_menu.show()
+		RESULTS:
+			results_menu.show()
 	
 	# emit signals
 	if new_menu != NONE and current_menu == NONE:

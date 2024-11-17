@@ -20,15 +20,6 @@ offset_bottom = 120.0
 focus_mode = 0
 text = "Play"
 
-[node name="Notes" type="Button" parent="."]
-layout_mode = 0
-offset_left = 689.0
-offset_top = 179.0
-offset_right = 743.0
-offset_bottom = 210.0
-focus_mode = 0
-text = "Notes"
-
 [node name="Settings" type="Button" parent="."]
 layout_mode = 0
 offset_left = 667.0
@@ -64,6 +55,5 @@ offset_bottom = 955.0
 text = "Credits"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Notes" to="." method="_on_notes_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
