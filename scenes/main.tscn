@@ -14,3 +14,5 @@ script = ExtResource("1_q3vcu")
 [connection signal="menu_closed" from="MenuManager" to="." method="_on_menu_manager_menu_closed"]
 [connection signal="menu_opened" from="MenuManager" to="." method="_on_menu_manager_menu_opened"]
 [connection signal="play_pressed" from="MenuManager" to="." method="_on_menu_manager_play_pressed"]
+[connection signal="player_lost" from="Combat" to="." method="_on_combat_player_lost"]
+[connection signal="player_won" from="Combat" to="." method="_on_combat_player_won"]

@@ -5,7 +5,7 @@ signal player_won
 
 const PLAYER_WAIT_TIME: float = 2.0
 const NOTE_SEPARATION: float = 192.0
-const TIME_BETWEEN_NOTES: float = 1.0
+const TIME_BETWEEN_NOTES: float = 0.1
 const NOTE_SCENE := preload("res://scenes/note.tscn")
 
 # First index will select a string then second index will select a fret on that string
@@ -77,7 +77,11 @@ func play_level(level: int) -> void:
 			set_to_third()
 	
 	$AnimationPlayer.play("on_notes")
-	play_current_notes()
+	var win: bool = await play_current_notes()
+	if win:
+		player_won.emit()
+	else:
+		player_lost.emit()
 	
 	
 func clear_notes() -> void:
@@ -86,7 +90,7 @@ func clear_notes() -> void:
 			child.queue_free()
 	
 
-func play_current_notes() -> void:
+func play_current_notes() -> bool:
 	# While there are notes to be spawned or notes in the game		
 	while len(notes_to_spawn) > 0 or check_for_instantiated_notes():
 		# Spawn notes offscreen
@@ -141,16 +145,16 @@ func play_current_notes() -> void:
 			var success: bool = await handler.player_success
 			
 			# Process player input
-			if success:
-				player_won.emit()
-			else:
-				player_lost.emit()
+			if !success:
+				$AnimationPlayer.play_backwards("on_guitar")
+				return false
 			$AnimationPlayer.play_backwards("notes_to_guitar")
 		# Delete notes
 		for string in string_nodes:
 			for note in string.get_children():
 				if note.global_position.x <= cutoff.global_position.x:
 					note.queue_free()
+	return true
 		
 		
 		

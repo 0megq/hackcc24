@@ -70,3 +70,13 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		if current_menu == NONE:
 			change_menu(PAUSE)
+
+
+func win() -> void:
+	results_menu.win()
+	change_menu(RESULTS)
+	
+	
+func lose() -> void:
+	results_menu.lose()
+	change_menu(RESULTS)

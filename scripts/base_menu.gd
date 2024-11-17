@@ -6,7 +6,7 @@ func _input(event: InputEvent) -> void:
 	if !visible or !menu_manager:
 		return
 	
-	if menu_manager.current_menu != menu_manager.MAIN and event.is_action_pressed("pause"):
+	if menu_manager.current_menu != menu_manager.MAIN and menu_manager.current_menu != menu_manager.RESULTS and event.is_action_pressed("pause"):
 		_back_input()
 
 
