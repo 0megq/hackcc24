@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk0ma244u68m7"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_mr40a"]
+[ext_resource type="Script" path="res://scripts/FrequencyMagic.py" id="3_q82co"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_mr40a")
+
+[node name="FrequencyMagic" type="Node" parent="."]
+script = ExtResource("3_q82co")
