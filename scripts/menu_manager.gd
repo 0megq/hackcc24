@@ -10,6 +10,7 @@ signal retry_pressed
 
 enum {
 	MAIN,
+	LEVEL_SELECT,
 	SETTINGS,
 	PAUSE,
 	RESULTS,
@@ -23,6 +24,7 @@ var previous_menu: int = NONE
 @onready var settings_menu: Control = $SettingsMenu
 @onready var pause_menu: Control = $PauseMenu
 @onready var results_menu: Control = $ResultsMenu
+@onready var main: Node = $".."
 
 
 func _ready() -> void:
@@ -41,12 +43,18 @@ func change_menu(new_menu: int) -> void:
 	match new_menu:
 		MAIN:
 			main_menu.show()
+			main.blur()
 		SETTINGS:
 			settings_menu.show()
 		PAUSE:
 			pause_menu.show()
 		RESULTS:
 			results_menu.show()
+			main.blur()
+		LEVEL_SELECT:
+			pass
+		NONE:
+			main.unblur()
 	
 	# emit signals
 	if new_menu != NONE and current_menu == NONE:

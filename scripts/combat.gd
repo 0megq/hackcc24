@@ -87,7 +87,7 @@ func play_level(level: int) -> void:
 		4:
 			set_to_fourth()
 	
-	$AnimationPlayer.play("on_notes")
+	$AnimationPlayer.play("on_guitar")
 	var win: bool = await play_current_notes()
 	if win:
 		player_won.emit()
@@ -142,7 +142,7 @@ func play_current_notes() -> bool:
 					break
 			
 		if note_to_play_exists:
-			$AnimationPlayer.play("notes_to_guitar")
+			#$AnimationPlayer.play("notes_to_guitar")
 			# Activat player_input
 			var handler: InputHandler = InputHandler.new()
 			handler.timer = Timer.new()
@@ -163,7 +163,7 @@ func play_current_notes() -> bool:
 			else:
 				pass
 				#print("success")
-			$AnimationPlayer.play_backwards("notes_to_guitar")
+			#$AnimationPlayer.play_backwards("notes_to_guitar")
 		# Delete notes
 		for string in string_nodes:
 			for note in string.get_children():
