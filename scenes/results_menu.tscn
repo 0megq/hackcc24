@@ -16,3 +16,22 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "text here"
+
+[node name="Retry" type="Button" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 60.0
+offset_right = 242.0
+offset_bottom = 91.0
+text = "Retry"
+
+[node name="Main" type="Button" parent="."]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 143.0
+offset_right = 120.0
+offset_bottom = 174.0
+text = "Main"
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Main" to="." method="_on_main_pressed"]

@@ -11,3 +11,7 @@ func _on_main_pressed() -> void:
 
 func _on_resume_pressed() -> void:
 	menu_manager.change_menu(menu_manager.NONE)
+
+
+func _on_settings_pressed() -> void:
+	menu_manager.change_menu(menu_manager.SETTINGS)

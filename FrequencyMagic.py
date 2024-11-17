@@ -12,6 +12,10 @@ class FrequencyMagic(Node):
 	
 	@private
 	def isFreqMatch(self: Self, inputFreq: float, correctFreq: int) -> bool:
+		#print("header")
+		#print(correctFreq * 0.96)
+		#print(inputFreq)
+		#print(correctFreq * 1.04)
 		return (correctFreq * 0.96 < inputFreq and inputFreq < 1.04 * correctFreq)
 	
 	def isLiveFreqCorrect(self: Self, correctFreq: int) -> bool:

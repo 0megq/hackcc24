@@ -6,8 +6,6 @@ signal menu_closed
 
 # Originate in one of the menus that are a child of this
 signal play_pressed
-#signal level_selected(level: int)
-signal next_pressed
 signal retry_pressed
 
 enum {

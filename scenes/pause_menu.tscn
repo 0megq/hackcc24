@@ -19,6 +19,14 @@ offset_right = 354.0
 offset_bottom = 223.0
 text = "Resume"
 
+[node name="Settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 212.0
+offset_right = 262.0
+offset_bottom = 243.0
+text = "Settings"
+
 [node name="Main" type="Button" parent="."]
 layout_mode = 0
 offset_left = 134.0
@@ -28,4 +36,5 @@ offset_bottom = 282.0
 text = "Main"
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main" to="." method="_on_main_pressed"]

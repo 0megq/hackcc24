@@ -3,18 +3,18 @@ class_name CombatManager extends Node2D
 signal player_lost
 signal player_won
 
-const PLAYER_WAIT_TIME: float = 2.0
+const PLAYER_WAIT_TIME: float = 4.0
 const NOTE_SEPARATION: float = 192.0
-const TIME_BETWEEN_NOTES: float = 0.1
+const TIME_BETWEEN_NOTES: float = 0.5
 const NOTE_SCENE := preload("res://scenes/note.tscn")
 
 # First index will select a string then second index will select a fret on that string
 var NOTE_FREQUENCYS: Array[PackedInt32Array] = [
 	[330, 349, 370, 392, 415, 440, 466, 494, 523, 554, 587, 622, 659], # Top E
-	[110, 117, 124, 131, 139, 147, 156, 165, 175, 185, 196, 208, 220], # A
-	[147, 156, 165, 175, 185, 196, 208, 220, 233, 247, 262, 278, 294], # D
-	[196, 208, 220, 233, 247, 262, 278, 294, 311, 330, 349, 370, 392], # G	
 	[247, 262, 278, 294, 311, 330, 349, 370, 392, 415, 440, 466, 494], # B
+	[196, 208, 220, 233, 247, 262, 278, 294, 311, 330, 349, 370, 392], # G
+	[147, 156, 165, 175, 185, 196, 208, 220, 233, 247, 262, 278, 294], # D
+	[110, 117, 124, 131, 139, 147, 156, 165, 175, 185, 196, 208, 220], # A
 	[82,  87,  93,  98, 104, 110, 117, 124, 131, 139, 147, 156, 165], # Bottom E
 	]
 
@@ -56,13 +56,22 @@ func set_to_first() -> void:
 	[-1, -1, -1, -1, -1, 0],[-1, -1, -1, -1, -1, 3],[-1, -1, -1, -1, -1, 6],[-1, -1, -1, -1, -1, 5],
 	[-1, -1, -1, -1, -1, 0],[-1, -1, -1, -1, -1, 3],[-1, -1, -1, -1, -1, 5],[-1, -1, -1, -1, -1, 3],[-1, -1, -1, -1, -1, 0],
 	]
-	
 func set_to_second() -> void:
-	notes_to_spawn = [[-1, 2, 4, -1, -1, -1],[-1, -1, 2, 3, -1, -1],[-1, 1, 4, 3, 7, -1]]
-	
-	
+	notes_to_spawn = [[-1, -1, -1, -1, 2, -1],[-1, -1, -1, -1, 5, -1],[-1, -1, -1, -1, 5, -1],[-1, -1, -1, -1, 7, -1],[-1, -1, -1, -1, 7, -1]
+	,[-1, -1, -1, -1, 10, -1],[-1, -1, -1, -1, 9, -1] ,[-1, -1, -1, -1, 10, -1],[-1, -1, -1, -1, 9, -1],[-1, -1, -1, -1, 10, -1]
+	,[-1, -1, -1, -1, 9, -1] ,[-1, -1, -1, -1, 5, -1],[-1, -1, -1, -1, 7, -1],[-1, -1, -1, -1, 7, -1]
+	# Iron man
+	]
+
+
 func set_to_third() -> void:
-	notes_to_spawn = [[-1, 2, 4, -1, -1, -1],[-1, -1, 2, 3, -1, -1],[-1, 1, 4, 3, 7, -1]]
+	notes_to_spawn = [ [-1, -1, -1, -1, -1, 0],[-1, -1, -1, -1, -1, 0],[-1, -1, -1, -1, -1, 1],[-1, -1, -1, -1, -1, 2],[-1, -1, -1, -1, 0, -1]
+	,[-1, -1, -1, -1, -1, 2],[-1, -1, -1, -1, 0, -1],[-1, -1, -1, -1, -1, 2],[-1, -1, -1, -1, -1, 2],[-1, -1, -1, -1, -1, 1],[-1, -1, -1, -1, -1, 0]
+	,[-1, -1, -1, -1, 2, -1],[-1, -1, -1, -1, -1, 0],[-1, -1, -1, -1, -1, 0],[-1, -1, -1, -1, 2, -1],[-1, -1, -1, -1, -1, 0],[-1, -1, -1, -1, -1, 0]
+
+	]
+func set_to_fourth() -> void:
+	notes_to_spawn = [[-1, -1, -1, 7, -1, -1],[-1, -1, 5, -1, -1, -1],[-1, 5, -1, -1, -1, -1],[5, -1, -1, -1, -1, -1],[7, -1, -1, -1, -1, -1],[-1, 5, -1, -1, -1, -1],[-1, -1, 5, -1, -1, -1],[7, -1, -1, -1, -1, -1],[8, -1, -1, -1, -1, -1],[-1, 5, -1, -1, -1, -1],[-1, -1, 5, -1, -1, -1],[8, -1, -1, -1, -1, -1],[2, -1, -1, -1, -1, -1],[-1, 3, -1, -1, -1, -1],[-1, -1, 2, -1, -1, -1],[2, -1, -1, -1, -1, -1],[0, -1, -1, -1, -1, -1],[-1, 1, -1, -1, -1, -1],[-1, -1, 2, -1, -1, -1],[-1, 1, -1, -1, -1, -1],[0, -1, -1, -1, -1, -1],[-1, 1, -1, -1, -1, -1],[-1, -1, 2, -1, -1, -1]]
 
 
 func play_level(level: int) -> void:
@@ -75,6 +84,8 @@ func play_level(level: int) -> void:
 			set_to_second()
 		3:
 			set_to_third()
+		4:
+			set_to_fourth()
 	
 	$AnimationPlayer.play("on_notes")
 	var win: bool = await play_current_notes()
@@ -102,7 +113,7 @@ func play_current_notes() -> bool:
 					var note_object := NOTE_SCENE.instantiate()
 					note_object.text = str(next_notes[i])
 					string_nodes[i].add_child(note_object)
-					note_object.global_position = string_nodes[i].global_position - Vector2(0, 36)
+					note_object.global_position = string_nodes[i].global_position - Vector2(0, 50)
 			# remove notes from queue
 			notes_to_spawn.remove_at(0)
 		# Move notes
@@ -147,7 +158,11 @@ func play_current_notes() -> bool:
 			# Process player input
 			if !success:
 				$AnimationPlayer.play_backwards("on_guitar")
+				#print("fail")
 				return false
+			else:
+				pass
+				#print("success")
 			$AnimationPlayer.play_backwards("notes_to_guitar")
 		# Delete notes
 		for string in string_nodes:
