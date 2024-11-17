@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8xi8ovqvygko"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_ne6sv"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ne6sv")
+
+[node name="Resume" type="Button" parent="."]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 192.0
+offset_right = 354.0
+offset_bottom = 223.0
+text = "Resume"
+
+[node name="Main" type="Button" parent="."]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 251.0
+offset_right = 181.0
+offset_bottom = 282.0
+text = "Main"
+
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Main" to="." method="_on_main_pressed"]

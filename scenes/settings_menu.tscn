@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dibyu1vyy58yx"]
+
+[ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_drrau"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_drrau")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 56.0
+offset_bottom = 41.0
+text = "Back"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 219.0
+offset_right = 458.0
+offset_bottom = 242.0
+text = "Settings"

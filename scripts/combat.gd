@@ -19,8 +19,8 @@ var notes_to_spawn: Array[PackedInt32Array]
 @onready var cutoff: Line2D = $Cutoff
 @onready var timer_bar: ProgressBar = $TimerBar
 
-func _ready() -> void:
-	play_level(1)
+#func _ready() -> void:
+	#play_level(1)
 
 
 func check_for_instantiated_notes() -> bool:
@@ -45,6 +45,8 @@ func set_to_third() -> void:
 
 
 func play_level(level: int) -> void:
+	clear_notes()
+	
 	match level:
 		1:
 			set_to_first()
@@ -54,6 +56,12 @@ func play_level(level: int) -> void:
 			set_to_third()
 	
 	play_current_notes()
+	
+	
+func clear_notes() -> void:
+	for string in string_nodes:
+		for child in string.get_children():
+			child.queue_free()
 	
 
 func play_current_notes() -> void:
@@ -74,9 +82,12 @@ func play_current_notes() -> void:
 		# Move notes
 		for string in string_nodes:
 			for note in string.get_children():
-				var tween := create_tween()
+				var tween := get_tree().create_tween()
+				tween.bind_node(self)
+				tween.set_pause_mode(Tween.TWEEN_PAUSE_BOUND)
 				tween.tween_property(note, "position", note.position - Vector2(NOTE_SEPARATION, 0), TIME_BETWEEN_NOTES)
-		await get_tree().create_timer(TIME_BETWEEN_NOTES).timeout
+		$NoteMoveTimer.start(TIME_BETWEEN_NOTES) 
+		await $NoteMoveTimer.timeout
 		
 		# Check if note to play exists
 		var note_to_play_exists: bool = false
@@ -106,7 +117,7 @@ func play_current_notes() -> void:
 func get_player_input() -> bool:
 	var handler: InputHandler = InputHandler.new()
 	handler.timer = Timer.new()
-	get_tree().root.call_deferred("add_child", handler.timer)
+	add_child(handler.timer)
 	
 	timer_bar.show()
 	timer_bar.current_timer = handler.timer

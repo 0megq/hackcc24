@@ -65,3 +65,5 @@ offset_right = 644.0
 offset_bottom = 219.0
 show_percentage = false
 script = ExtResource("3_y4r6w")
+
+[node name="NoteMoveTimer" type="Timer" parent="."]

@@ -17,6 +17,7 @@ offset_left = 686.0
 offset_top = 112.0
 offset_right = 694.0
 offset_bottom = 120.0
+focus_mode = 0
 text = "Play"
 
 [node name="Notes" type="Button" parent="."]
@@ -25,6 +26,7 @@ offset_left = 689.0
 offset_top = 179.0
 offset_right = 743.0
 offset_bottom = 210.0
+focus_mode = 0
 text = "Notes"
 
 [node name="Settings" type="Button" parent="."]
@@ -33,6 +35,7 @@ offset_left = 667.0
 offset_top = 245.0
 offset_right = 737.0
 offset_bottom = 276.0
+focus_mode = 0
 text = "Settings"
 
 [node name="Quit" type="Button" parent="."]
@@ -41,6 +44,7 @@ offset_left = 670.0
 offset_top = 331.0
 offset_right = 712.0
 offset_bottom = 362.0
+focus_mode = 0
 text = "Quit"
 
 [node name="Title" type="Label" parent="."]
