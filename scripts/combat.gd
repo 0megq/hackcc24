@@ -2,8 +2,18 @@ class_name CombatManager extends Node2D
 
 const PLAYER_WAIT_TIME: float = 2.0
 const NOTE_SEPARATION: float = 192.0
-const TIME_BETWEEN_NOTES: float = 1.0
+const TIME_BETWEEN_NOTES: float = 3.0
 const NOTE_SCENE := preload("res://scenes/note.tscn")
+
+# First index will select a string then second index will select a fret on that string
+var NOTE_FREQUENCYS: Array[PackedInt32Array] = [
+	[330, 349, 370, 392, 415, 440, 466, 494, 523, 554, 587, 622, 659], # Top E
+	[110, 117, 124, 131, 139, 147, 156, 165, 175, 185, 196, 208, 220], # A
+	[147, 156, 165, 175, 185, 196, 208, 220, 233, 247, 262, 278, 294], # D
+	[196, 208, 220, 233, 247, 262, 278, 294, 311, 330, 349, 370, 392], # G	
+	[247, 262, 278, 294, 311, 330, 349, 370, 392, 415, 440, 466, 494], # B
+	[82,  87,  93,  98, 104, 110, 117, 124, 131, 139, 147, 156, 165], # Bottom E
+	]
 
 # Start with top e and then goes down
 @export var string_nodes: Array[Node2D]
@@ -23,9 +33,6 @@ var threads: Array[Thread]
 @onready var note_move_timer: Timer = $NoteMoveTimer
 @onready var frequency_py: Node = $FrequencyMagic.get_pyscript()
 
-#func _ready() -> void:
-	#play_level(1)
-
 
 func _process(delta: float) -> void:
 	for thread in threads:
@@ -40,11 +47,12 @@ func check_for_instantiated_notes() -> bool:
 			return true
 	return false
 	
+	
 func set_to_first() -> void:
 	notes_to_spawn = [
 	[-1, -1, -1, -1, -1, 0],[-1, -1, -1, -1, -1, 3],[-1, -1, -1, -1, -1, 5],
 	[-1, -1, -1, -1, -1, 0],[-1, -1, -1, -1, -1, 3],[-1, -1, -1, -1, -1, 6],[-1, -1, -1, -1, -1, 5],
-	[-1, -1, -1, -1, -1, 0],[-1, -1, -1, -1, -1, 3],[-1, -1, -1, -1, -1, 5],[-1, -1, -1, -1, -1, 3],[-1, -1, -1, -1, -1, 0]
+	[-1, -1, -1, -1, -1, 0],[-1, -1, -1, -1, -1, 3],[-1, -1, -1, -1, -1, 5],[-1, -1, -1, -1, -1, 3],[-1, -1, -1, -1, -1, 0],
 	]
 	
 func set_to_second() -> void:
@@ -103,10 +111,14 @@ func play_current_notes() -> void:
 		
 		# Check if note to play exists
 		var note_to_play_exists: bool = false
-		for string in string_nodes:
+		var note_freq: int
+		for string_num in len(string_nodes):
+			var string := string_nodes[string_num]
 			for note in string.get_children():
 				if note.global_position.x <= cutoff.global_position.x:
 					note_to_play_exists = true
+					note_freq = NOTE_FREQUENCYS[string_num][int(note.text)]
+					#print(string_num, " ", int(note.text))
 					break
 			
 		if note_to_play_exists:
@@ -114,7 +126,8 @@ func play_current_notes() -> void:
 			var handler: InputHandler = InputHandler.new()
 			handler.timer = Timer.new()
 			add_child(handler.timer)
-			activate_player_input(handler)
+			#print(note_freq)
+			activate_player_input(handler, note_freq)
 			
 			# Receive player input
 			while !handler.player_input_received:
@@ -135,7 +148,7 @@ func play_current_notes() -> void:
 		
 # This function will call the api and wait for player_wait_time
 # It will return player's success
-func activate_player_input(handler: InputHandler) -> void:
+func activate_player_input(handler: InputHandler, note_freq: int) -> void:
 	timer_bar.show()
 	timer_bar.current_timer = handler.timer
 	timer_bar.max_value = PLAYER_WAIT_TIME
@@ -143,7 +156,7 @@ func activate_player_input(handler: InputHandler) -> void:
 	active_input_handlers.append(handler)
 	var thread: Thread = Thread.new()
 	threads.append(thread)
-	thread.start(api_call.bindv([handler]))
+	thread.start(api_call.bindv([handler, note_freq]))
 	
 	timer_wait(handler)
 	handler.connect("internal", test)
@@ -161,10 +174,9 @@ func test(success: bool, handler: InputHandler) -> void:
 	handler.player_input_received = true
 	
 
-func api_call(handler: InputHandler) -> void:
+func api_call(handler: InputHandler, freq: int) -> void:
 	# Use api debug fake for now. See _input()
-	var value: bool = await frequency_py.isLiveFreqCorrect(82)
-	print("success?: ", value)
+	var value: bool = await frequency_py.isLiveFreqCorrect(freq)
 	handler.internal.emit(value, handler)
 	
 

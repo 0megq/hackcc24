@@ -116,7 +116,7 @@ scale = Vector2(0.886028, 0.886028)
 texture = ExtResource("4_0mh2k")
 
 [node name="Cutoff" type="Line2D" parent="."]
-position = Vector2(1098, 216)
+position = Vector2(1053, 216)
 points = PackedVector2Array(0, 0, 0, 500)
 
 [node name="TimerBar" type="ProgressBar" parent="."]

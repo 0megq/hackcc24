@@ -33,16 +33,16 @@ class FrequencyMagic(Node):
 		samplesChecked = 0
 		loud = False
 
-		while samplesChecked < 6:
+		while samplesChecked < 10:
 			chunkData = numpy.frombuffer(stream.read(CHUNK), dtype=numpy.int16).astype(numpy.float32)
 			if (loud):
-				print(pitch_o(chunkData))
+				#print(pitch_o(chunkData))
 				if (self.isFreqMatch(pitch_o(chunkData), correctFreq)):
 					freqMatches = True
 					break
 				samplesChecked += 1
 			elif meter.integrated_loudness(chunkData) > 70.0:
-				print(pitch_o(chunkData))
+				#print(pitch_o(chunkData))
 				loud = True
 				if (self.isFreqMatch(pitch_o(chunkData), correctFreq)):
 					freqMatches = True
