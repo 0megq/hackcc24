@@ -3,9 +3,11 @@ extends BaseMenu
 
 func win() -> void:
 	$Label.text = "You  Won!"
+	$Victory.play(1.2)
 	
 func lose() -> void:
 	$Label.text = "You  Lost"
+	$Defeat.play()
 
 
 func _on_retry_pressed() -> void:

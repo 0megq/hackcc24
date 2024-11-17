@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://p3wdybx1k8m2"]
+[gd_scene load_steps=5 format=3 uid="uid://p3wdybx1k8m2"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_kn5uu"]
 [ext_resource type="PackedScene" uid="uid://bdxfyoi1dy16n" path="res://scenes/menu_manager.tscn" id="2_0r72k"]
 [ext_resource type="PackedScene" uid="uid://cw1jt1ikeyxad" path="res://scenes/combat.tscn" id="3_2qx4e"]
+[ext_resource type="AudioStream" uid="uid://y471ol3vgkfk" path="res://assets/sunny afternoon audio.mp3" id="4_dfdtt"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_kn5uu")
@@ -11,6 +12,11 @@ script = ExtResource("1_kn5uu")
 layer = 3
 
 [node name="Combat" parent="." instance=ExtResource("3_2qx4e")]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dfdtt")
+volume_db = -1.0
+autoplay = true
 
 [connection signal="menu_closed" from="MenuManager" to="." method="_on_menu_manager_menu_closed"]
 [connection signal="menu_opened" from="MenuManager" to="." method="_on_menu_manager_menu_opened"]
