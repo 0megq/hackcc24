@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dly3id3ravwwe"
+path="res://.godot/imported/defeat sound edited.mp3-e6eb2a5690046c23f86e73073722eafb.mp3str"
+
+[deps]
+
+source_file="res://assets/defeat sound edited.mp3"
+dest_files=["res://.godot/imported/defeat sound edited.mp3-e6eb2a5690046c23f86e73073722eafb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

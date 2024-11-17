@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_drrau")
 
-[node name="Button" type="Button" parent="."]
+[node name="Back" type="Button" parent="."]
 layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
@@ -26,3 +26,5 @@ offset_top = 219.0
 offset_right = 458.0
 offset_bottom = 242.0
 text = "Settings"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

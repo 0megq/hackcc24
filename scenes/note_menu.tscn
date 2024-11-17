@@ -12,6 +12,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v0mwy")
 
+[node name="Back" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 56.0
+offset_bottom = 41.0
+text = "Back"
+
 [node name="EmptyFret" type="Sprite2D" parent="."]
 position = Vector2(893, 462)
 texture = ExtResource("1_0v5el")
@@ -21,3 +28,5 @@ texture = ExtResource("1_0v5el")
 [node name="O" type="Sprite2D" parent="EmptyFret"]
 
 [node name="Press" type="Sprite2D" parent="EmptyFret"]
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

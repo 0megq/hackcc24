@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://r3of5hwqkuu1"
+path="res://.godot/imported/dying pacman guitar sound.mp3-2292388147f289523ecfc496eb76b69a.mp3str"
+
+[deps]
+
+source_file="res://assets/dying pacman guitar sound.mp3"
+dest_files=["res://.godot/imported/dying pacman guitar sound.mp3-2292388147f289523ecfc496eb76b69a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
