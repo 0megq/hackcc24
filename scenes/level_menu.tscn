@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm5rm2iwm1lep"]
+
+[ext_resource type="Script" path="res://scripts/level_menu.gd" id="1_cy7ad"]
+[ext_resource type="FontFile" uid="uid://c6yt16xwem4ly" path="res://ARCADECLASSIC.TTF" id="2_4x1oq"]
+[ext_resource type="Texture2D" uid="uid://berx7vibcpkn6" path="res://assets/blurred background.png" id="2_g27nq"]
+[ext_resource type="Texture2D" uid="uid://cwetygploswrf" path="res://assets/guitar fretboard.png" id="3_10rt8"]
+
+[node name="LevelMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cy7ad")
+
+[node name="BlurredBackground" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_g27nq")
+
+[node name="GuitarFretboard" type="Sprite2D" parent="BlurredBackground"]
+texture = ExtResource("3_10rt8")
+
+[node name="1" type="Button" parent="."]
+custom_minimum_size = Vector2(256.865, 256)
+layout_mode = 0
+offset_left = -919.0
+offset_top = -121.0
+offset_right = -466.0
+offset_bottom = 135.0
+theme_override_fonts/font = ExtResource("2_4x1oq")
+theme_override_font_sizes/font_size = 50
+text = " Smoke  On  The  Water "
+
+[node name="2" type="Button" parent="."]
+custom_minimum_size = Vector2(256.865, 256)
+layout_mode = 0
+offset_left = -381.0
+offset_top = -121.0
+offset_right = -124.135
+offset_bottom = 135.0
+theme_override_fonts/font = ExtResource("2_4x1oq")
+theme_override_font_sizes/font_size = 50
+text = " Iron  Man "
+
+[node name="3" type="Button" parent="."]
+custom_minimum_size = Vector2(256.865, 256)
+layout_mode = 0
+offset_left = 8.0
+offset_top = -121.0
+offset_right = 378.0
+offset_bottom = 135.0
+theme_override_fonts/font = ExtResource("2_4x1oq")
+theme_override_font_sizes/font_size = 50
+text = " Come  As  You  Are "
+
+[node name="4" type="Button" parent="."]
+custom_minimum_size = Vector2(256.865, 256)
+layout_mode = 0
+offset_left = 449.0
+offset_top = -121.0
+offset_right = 923.0
+offset_bottom = 135.0
+theme_override_fonts/font = ExtResource("2_4x1oq")
+theme_override_font_sizes/font_size = 50
+text = " Stairway  To  Heaven "
+
+[connection signal="pressed" from="1" to="." method="_on_1_pressed"]
+[connection signal="pressed" from="2" to="." method="_on_2_pressed"]
+[connection signal="pressed" from="3" to="." method="_on_3_pressed"]
+[connection signal="pressed" from="4" to="." method="_on_4_pressed"]

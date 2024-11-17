@@ -30,10 +30,16 @@ var notes_to_spawn: Array[PackedInt32Array]
 
 var threads: Array[Thread]
 
-@onready var cutoff: Line2D = $Cutoff
-@onready var timer_bar: ProgressBar = $TimerBar
-@onready var note_move_timer: Timer = $NoteMoveTimer
-@onready var frequency_py: Node = $FrequencyMagic.get_pyscript()
+var cutoff: Line2D
+var timer_bar: ProgressBar
+var note_move_timer: Timer
+var frequency_py: Node
+
+func _ready() -> void:
+	cutoff = $Cutoff
+	timer_bar = $TimerBar
+	note_move_timer = $NoteMoveTimer
+	frequency_py = $FrequencyMagic.get_pyscript()
 
 
 func _process(delta: float) -> void:
@@ -75,7 +81,7 @@ func set_to_fourth() -> void:
 
 
 func play_level(level: int) -> void:
-	clear_notes()
+	reset()
 	
 	match level:
 		1:
@@ -230,6 +236,12 @@ class InputHandler:
 	signal internal(success: bool, handler: InputHandler)
 		
 
+func reset() -> void:
+	clear_notes()
+	timer_bar.hide()
+	$AnimationPlayer.play("off")
+	$NoteMoveTimer.stop()
+	active_input_handlers.clear()
 
 
 # The process

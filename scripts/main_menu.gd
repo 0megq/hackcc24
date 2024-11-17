@@ -2,12 +2,7 @@ extends BaseMenu
 
 
 func _on_play_pressed() -> void:
-	menu_manager.play_pressed.emit()
-	menu_manager.change_menu(MenuManager.NONE)
-
-
-func _on_settings_pressed() -> void:
-	menu_manager.change_menu(MenuManager.SETTINGS)
+	menu_manager.change_menu(MenuManager.LEVEL_SELECT)
 
 
 func _on_quit_pressed() -> void:

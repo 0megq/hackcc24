@@ -5,13 +5,11 @@ signal menu_opened
 signal menu_closed
 
 # Originate in one of the menus that are a child of this
-signal play_pressed
-signal retry_pressed
+signal play_pressed(level: int)
 
 enum {
 	MAIN,
 	LEVEL_SELECT,
-	SETTINGS,
 	PAUSE,
 	RESULTS,
 	NONE,
@@ -25,6 +23,7 @@ var previous_menu: int = NONE
 @onready var pause_menu: Control = $PauseMenu
 @onready var results_menu: Control = $ResultsMenu
 @onready var main: Node = $".."
+@onready var level_menu: Control = $LevelMenu
 
 
 func _ready() -> void:
@@ -43,18 +42,14 @@ func change_menu(new_menu: int) -> void:
 	match new_menu:
 		MAIN:
 			main_menu.show()
-			main.blur()
-		SETTINGS:
-			settings_menu.show()
+
 		PAUSE:
 			pause_menu.show()
+
 		RESULTS:
 			results_menu.show()
-			main.blur()
 		LEVEL_SELECT:
-			pass
-		NONE:
-			main.unblur()
+			level_menu.show()
 	
 	# emit signals
 	if new_menu != NONE and current_menu == NONE:

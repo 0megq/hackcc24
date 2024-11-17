@@ -1,80 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://p3wdybx1k8m2"]
+[gd_scene load_steps=4 format=3 uid="uid://p3wdybx1k8m2"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_kn5uu"]
 [ext_resource type="PackedScene" uid="uid://bdxfyoi1dy16n" path="res://scenes/menu_manager.tscn" id="2_0r72k"]
 [ext_resource type="PackedScene" uid="uid://cw1jt1ikeyxad" path="res://scenes/combat.tscn" id="3_2qx4e"]
-[ext_resource type="Texture2D" uid="uid://berx7vibcpkn6" path="res://assets/blurred background.png" id="4_oxsio"]
-
-[sub_resource type="Animation" id="Animation_qk38y"]
-resource_name = "blur"
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BlurredBackground:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_3aqwq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BlurredBackground:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_kmiyl"]
-resource_name = "unblur"
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BlurredBackground:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ih8bu"]
-_data = {
-"RESET": SubResource("Animation_3aqwq"),
-"blur": SubResource("Animation_qk38y"),
-"unblur": SubResource("Animation_kmiyl")
-}
 
 [node name="Main" type="Node"]
 script = ExtResource("1_kn5uu")
 
 [node name="MenuManager" parent="." instance=ExtResource("2_0r72k")]
+layer = 3
 
 [node name="Combat" parent="." instance=ExtResource("3_2qx4e")]
-
-[node name="BlurredBackground" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
-scale = Vector2(4, 4)
-texture = ExtResource("4_oxsio")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_ih8bu")
-}
 
 [connection signal="menu_closed" from="MenuManager" to="." method="_on_menu_manager_menu_closed"]
 [connection signal="menu_opened" from="MenuManager" to="." method="_on_menu_manager_menu_opened"]
