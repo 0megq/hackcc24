@@ -1,19 +1,70 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw1jt1ikeyxad"]
+[gd_scene load_steps=15 format=3 uid="uid://cw1jt1ikeyxad"]
 
-[ext_resource type="Texture2D" uid="uid://di3pge5ip2hyi" path="res://assets/guitar_temp.png" id="1_ia4va"]
 [ext_resource type="Script" path="res://scripts/combat.gd" id="1_q5d87"]
+[ext_resource type="Texture2D" uid="uid://wd834fbd8kjn" path="res://assets/curtain bg no guitar.png" id="2_0rna8"]
+[ext_resource type="Texture2D" uid="uid://drkpvm4dd24r8" path="res://assets/guitar pixel art.png" id="3_rt1bf"]
 [ext_resource type="Script" path="res://scripts/timer_bar.gd" id="3_y4r6w"]
+[ext_resource type="Texture2D" uid="uid://baaox0ai33f62" path="res://assets/guitar shadow.png" id="4_0mh2k"]
+[ext_resource type="Script" path="res://FrequencyMagic.py" id="4_cvchw"]
+[ext_resource type="Texture2D" uid="uid://eu35x2ddeq2x" path="res://assets/curtains.png" id="4_ykp1q"]
+[ext_resource type="Texture2D" uid="uid://b8ikxe60r8y2e" path="res://assets/spotlight.png" id="7_0tkmf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k68on"]
+atlas = ExtResource("7_0tkmf")
+region = Rect2(44, -1, 191, 271)
+
+[sub_resource type="Animation" id="Animation_bawty"]
+resource_name = "notes"
+
+[sub_resource type="Animation" id="Animation_vhnbl"]
+resource_name = "guitar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spotlight:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.58476]
+}
+
+[sub_resource type="Animation" id="Animation_x0maa"]
+resource_name = "off"
+
+[sub_resource type="Animation" id="Animation_p5h6o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spotlight:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pnwwx"]
+_data = {
+"RESET": SubResource("Animation_p5h6o"),
+"guitar": SubResource("Animation_vhnbl"),
+"notes": SubResource("Animation_bawty"),
+"off": SubResource("Animation_x0maa")
+}
 
 [node name="Combat" type="Node2D" node_paths=PackedStringArray("string_nodes")]
 script = ExtResource("1_q5d87")
 string_nodes = [NodePath("Notes/ETop"), NodePath("Notes/A"), NodePath("Notes/D"), NodePath("Notes/G"), NodePath("Notes/B"), NodePath("Notes/EBottom")]
 
 [node name="Background" type="Sprite2D" parent="."]
-
-[node name="Guitar" type="Sprite2D" parent="."]
-position = Vector2(407, 519)
-scale = Vector2(4.51453, 4.51453)
-texture = ExtResource("1_ia4va")
+position = Vector2(960, 540)
+scale = Vector2(4, 4)
+texture = ExtResource("2_0rna8")
 
 [node name="Notes" type="Node2D" parent="."]
 
@@ -53,6 +104,17 @@ points = PackedVector2Array(0, 0, -800, 0)
 width = 20.0
 default_color = Color(0.77084, 0.770839, 0.770839, 1)
 
+[node name="Guitar" type="Sprite2D" parent="."]
+position = Vector2(919, 468)
+scale = Vector2(4.51453, 4.51453)
+texture = ExtResource("3_rt1bf")
+
+[node name="GuitarShadow" type="Sprite2D" parent="Guitar"]
+show_behind_parent = true
+position = Vector2(-7.30973, 0.443012)
+scale = Vector2(0.886028, 0.886028)
+texture = ExtResource("4_0mh2k")
+
 [node name="Cutoff" type="Line2D" parent="."]
 position = Vector2(1098, 216)
 points = PackedVector2Array(0, 0, 0, 500)
@@ -67,3 +129,21 @@ show_percentage = false
 script = ExtResource("3_y4r6w")
 
 [node name="NoteMoveTimer" type="Timer" parent="."]
+
+[node name="FrequencyMagic" type="Node" parent="."]
+script = ExtResource("4_cvchw")
+
+[node name="Spotlight" type="Sprite2D" parent="."]
+position = Vector2(501, 449)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_k68on")
+
+[node name="Curtains" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(4, 4)
+texture = ExtResource("4_ykp1q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pnwwx")
+}

@@ -16,11 +16,22 @@ var players_turn: bool = false
 # The PackedInt32Array starts with the top e string and then goes down. -1 represents an empty note
 var notes_to_spawn: Array[PackedInt32Array]
 
+var threads: Array[Thread]
+
 @onready var cutoff: Line2D = $Cutoff
 @onready var timer_bar: ProgressBar = $TimerBar
+@onready var note_move_timer: Timer = $NoteMoveTimer
+@onready var frequency_py: Node = $FrequencyMagic.get_pyscript()
 
 #func _ready() -> void:
 	#play_level(1)
+
+
+func _process(delta: float) -> void:
+	for thread in threads:
+		if !thread.is_alive():
+			thread.wait_to_finish()
+			threads.remove_at(threads.find(thread))
 
 
 func check_for_instantiated_notes() -> bool:
@@ -86,8 +97,9 @@ func play_current_notes() -> void:
 				tween.bind_node(self)
 				tween.set_pause_mode(Tween.TWEEN_PAUSE_BOUND)
 				tween.tween_property(note, "position", note.position - Vector2(NOTE_SEPARATION, 0), TIME_BETWEEN_NOTES)
-		$NoteMoveTimer.start(TIME_BETWEEN_NOTES) 
-		await $NoteMoveTimer.timeout
+		
+		note_move_timer.call_deferred("start",TIME_BETWEEN_NOTES) 
+		await note_move_timer.timeout
 		
 		# Check if note to play exists
 		var note_to_play_exists: bool = false
@@ -98,8 +110,17 @@ func play_current_notes() -> void:
 					break
 			
 		if note_to_play_exists:
-			# Wait for player input
-			var success := await get_player_input()
+			# Activat player_input
+			var handler: InputHandler = InputHandler.new()
+			handler.timer = Timer.new()
+			add_child(handler.timer)
+			activate_player_input(handler)
+			
+			# Receive player input
+			while !handler.player_input_received:
+				await get_tree().create_timer(0.01).timeout
+			var success: bool = await handler.player_success
+			
 			# Process player input
 			if success:
 				print("win!")
@@ -114,35 +135,41 @@ func play_current_notes() -> void:
 		
 # This function will call the api and wait for player_wait_time
 # It will return player's success
-func get_player_input() -> bool:
-	var handler: InputHandler = InputHandler.new()
-	handler.timer = Timer.new()
-	add_child(handler.timer)
-	
+func activate_player_input(handler: InputHandler) -> void:
 	timer_bar.show()
 	timer_bar.current_timer = handler.timer
 	timer_bar.max_value = PLAYER_WAIT_TIME
 	
 	active_input_handlers.append(handler)
-	api_call()
-	call_deferred("timer_wait", handler)
-	var success: bool = await handler.player_input_done
+	var thread: Thread = Thread.new()
+	threads.append(thread)
+	thread.start(api_call.bindv([handler]))
 	
-	# Clean up
-	handler.timer.queue_free()
-	active_input_handlers.remove_at(active_input_handlers.find(handler))
-	timer_bar.hide()
+	timer_wait(handler)
+	handler.connect("internal", test)
+	
+	
+func test(success: bool, handler: InputHandler) -> void:
+	if handler.timer != null and handler.timer.is_node_ready():
+		handler.timer.queue_free()
+	var handler_index := active_input_handlers.find(handler)
+	if handler_index >= 0:
+		active_input_handlers.remove_at(handler_index)
+		
+	timer_bar.call_deferred("hide")
+	handler.player_success = success
+	handler.player_input_received = true
+	
 
-	return success
-
-
-func api_call() -> void:
+func api_call(handler: InputHandler) -> void:
 	# Use api debug fake for now. See _input()
-	pass
-
+	var value: bool = await frequency_py.isLiveFreqCorrect(82)
+	print("success?: ", value)
+	handler.internal.emit(value, handler)
+	
 
 func api_debug_fake_callback(handler: InputHandler) -> void:
-	handler.player_input_done.emit(true)
+	handler.internal.emit(true, handler)
 
 
 func _input(e: InputEvent) -> void:
@@ -155,12 +182,13 @@ func _input(e: InputEvent) -> void:
 func timer_wait(handler: InputHandler) -> void:
 	handler.timer.start(PLAYER_WAIT_TIME)
 	await handler.timer.timeout
-	handler.player_input_done.emit(false)
-
+	handler.internal.emit(false, handler)
 
 class InputHandler:
 	var timer: Timer
-	signal player_input_done(success: bool)
+	var player_input_received: bool = false
+	var player_success: bool = false
+	signal internal(success: bool, handler: InputHandler)
 		
 
 
