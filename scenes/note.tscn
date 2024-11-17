@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dkel31dp1wpu3"]
+
+[node name="Note" type="Label"]
+offset_right = 55.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 48
+text = "-1"
+horizontal_alignment = 1

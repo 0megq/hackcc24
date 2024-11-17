@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://djdd65vy62jki"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_4joo1"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4joo1")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 686.0
+offset_top = 112.0
+offset_right = 694.0
+offset_bottom = 120.0
+text = "Play"
+
+[node name="Notes" type="Button" parent="."]
+layout_mode = 0
+offset_left = 689.0
+offset_top = 179.0
+offset_right = 743.0
+offset_bottom = 210.0
+text = "Notes"
+
+[node name="Settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 667.0
+offset_top = 245.0
+offset_right = 737.0
+offset_bottom = 276.0
+text = "Settings"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 331.0
+offset_right = 712.0
+offset_bottom = 362.0
+text = "Quit"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 688.0
+offset_top = 42.0
+offset_right = 728.0
+offset_bottom = 65.0
+text = "Title"
+
+[node name="Credits" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1496.0
+offset_top = 932.0
+offset_right = 1551.0
+offset_bottom = 955.0
+text = "Credits"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Notes" to="." method="_on_notes_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

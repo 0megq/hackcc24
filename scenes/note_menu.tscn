@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxtyalc6umued"]
+
+[ext_resource type="Texture2D" uid="uid://b8rl6ghmt51ve" path="res://assets/empty_fret_temp.png" id="1_0v5el"]
+
+[node name="NotesMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EmptyFret" type="Sprite2D" parent="."]
+position = Vector2(893, 462)
+texture = ExtResource("1_0v5el")
+
+[node name="X" type="Sprite2D" parent="EmptyFret"]
+
+[node name="O" type="Sprite2D" parent="EmptyFret"]
+
+[node name="Press" type="Sprite2D" parent="EmptyFret"]

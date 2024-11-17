@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw1jt1ikeyxad"]
+
+[ext_resource type="Texture2D" uid="uid://di3pge5ip2hyi" path="res://assets/guitar_temp.png" id="1_ia4va"]
+[ext_resource type="Script" path="res://scripts/combat.gd" id="1_q5d87"]
+[ext_resource type="Script" path="res://scripts/timer_bar.gd" id="3_y4r6w"]
+
+[node name="Combat" type="Node2D" node_paths=PackedStringArray("string_nodes")]
+script = ExtResource("1_q5d87")
+string_nodes = [NodePath("Notes/ETop"), NodePath("Notes/A"), NodePath("Notes/D"), NodePath("Notes/G"), NodePath("Notes/B"), NodePath("Notes/EBottom")]
+
+[node name="Background" type="Sprite2D" parent="."]
+
+[node name="Guitar" type="Sprite2D" parent="."]
+position = Vector2(407, 519)
+scale = Vector2(4.51453, 4.51453)
+texture = ExtResource("1_ia4va")
+
+[node name="Notes" type="Node2D" parent="."]
+
+[node name="ETop" type="Line2D" parent="Notes"]
+position = Vector2(1936, 223)
+points = PackedVector2Array(0, 0, -800, 0)
+width = 20.0
+default_color = Color(0.77084, 0.770839, 0.770839, 1)
+
+[node name="A" type="Line2D" parent="Notes"]
+position = Vector2(1934, 297)
+points = PackedVector2Array(0, 0, -800, 0)
+width = 20.0
+default_color = Color(0.77084, 0.770839, 0.770839, 1)
+
+[node name="D" type="Line2D" parent="Notes"]
+position = Vector2(1937, 386)
+points = PackedVector2Array(0, 0, -800, 0)
+width = 20.0
+default_color = Color(0.77084, 0.770839, 0.770839, 1)
+
+[node name="G" type="Line2D" parent="Notes"]
+position = Vector2(1937, 499)
+points = PackedVector2Array(0, 0, -800, 0)
+width = 20.0
+default_color = Color(0.77084, 0.770839, 0.770839, 1)
+
+[node name="B" type="Line2D" parent="Notes"]
+position = Vector2(1937, 620)
+points = PackedVector2Array(0, 0, -800, 0)
+width = 20.0
+default_color = Color(0.77084, 0.770839, 0.770839, 1)
+
+[node name="EBottom" type="Line2D" parent="Notes"]
+position = Vector2(1940, 723)
+points = PackedVector2Array(0, 0, -800, 0)
+width = 20.0
+default_color = Color(0.77084, 0.770839, 0.770839, 1)
+
+[node name="Cutoff" type="Line2D" parent="."]
+position = Vector2(1098, 216)
+points = PackedVector2Array(0, 0, 0, 500)
+
+[node name="TimerBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = 150.0
+offset_top = 149.0
+offset_right = 644.0
+offset_bottom = 219.0
+show_percentage = false
+script = ExtResource("3_y4r6w")
